@@ -18,7 +18,7 @@
             $dbh = null;
             
             print('スタッフ一覧<br /><br />');
-            print('<form method="post" action="staff_edit.php">');
+            print('<form method="post" action="staff_branch.php">');
             while (true) {
                 $rec = $stmt->fetch(PDO::FETCH_ASSOC);
                 //var_dump($rec);

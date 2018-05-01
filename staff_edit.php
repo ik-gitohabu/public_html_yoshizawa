@@ -10,8 +10,9 @@
 </head>
 <body>
     <?php
-        //try{      
-            $staff_code = $_POST['staffcode'];
+        //try{
+            //$staff_code = $_POST['staffcode'];
+            $staff_code = $_GET['staffcode'];
 
             include 'database.php';
             $sql = 'SELECT * FROM mst_staff WHERE code=?';
