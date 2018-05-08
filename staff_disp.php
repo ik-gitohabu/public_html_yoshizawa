@@ -10,7 +10,8 @@
 </head>
 <body>
     <?php
-        //try{      
+        //try{
+            //$staff_code = $_POST['staffcode'];
             $staff_code = $_GET['staffcode'];
 
             include 'database.php';
@@ -31,17 +32,14 @@
         }*/
     ?>
 
-    スタッフ削除<br />
+    スタッフ情報参照<br />
     <br />
     スタッフコード<br />
     <?=$staff_code?><br /><br />
-    <form method="post" action="staff_delete_done.php">
-    <input type="hidden" name="code" value="<?=$staff_code?>">
     スタッフ名<br />
-    <?=$staff_name?><br />
-    このスタッフを削除してよろしいですか？<br />
+    <?=$staff_code?><br />
+    <form>
     <input type="button" onclick="history.back()" value="戻る">
-    <input type="submit" value="OK">
     </form>
 </body>
 </html>
