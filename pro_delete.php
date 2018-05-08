@@ -55,7 +55,7 @@
 	<input type="hidden" name="code" value="<?php print $pro_code; ?>">
 	<input type="hidden" name="gazou_name" value="<?php print $pro_gazou_name; ?>">
 	<input type="button" onclick="history.back()" value="戻る">
-	<input type="submit" value="ＯＫ">
+	<input type="submit" value="OK">
 	</form>
 </body>
 </html>

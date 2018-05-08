@@ -61,7 +61,7 @@
 	<input type="file" name="gazou" style="width:400px"><br />
 	<br />
 	<input type="button" onclick="history.back()" value="戻る">
-	<input type="submit" value="ＯＫ">
+	<input type="submit" value="OK">
 	</form>
 
 </body>

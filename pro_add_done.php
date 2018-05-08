@@ -11,11 +11,13 @@
 <body>
 	<?php
 		//try　{
+			$pro_name = $_POST['name'];
 			$pro_price = $_POST['price'];
 			$pro_gazou_name = $_POST['gazou_name'];
 
 			$pro_name = htmlspecialchars($pro_name);
 			$pro_price = htmlspecialchars($pro_price);
+			$pro_gazou_name = htmlspecialchars($pro_gazou_name);
 
 			include 'database.php';
 			$sql = 'INSERT INTO mst_product(name, price, gazou) VALUES (?, ?, ?)';
@@ -24,7 +26,6 @@
 			$data[] = $pro_price;
 			$data[] = $pro_gazou_name;
 			$stmt->execute($data);
-
 			$dbh = null;
 
 			print $pro_name;
