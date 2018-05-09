@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>よしざわ農園</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
+    <script src="../main.js"></script>
 </head>
 <body>
 	<?php
@@ -15,7 +15,7 @@
 			$pro_code = $_POST['code'];
 			$pro_gazou_name = $_POST['gazou_name'];
 
-			include 'database.php';
+			include '../database.php';
 			$sql = 'DELETE FROM mst_product WHERE code = ?';
 			$stmt = $dbh->prepare($sql);
 			$data[] = $pro_code;

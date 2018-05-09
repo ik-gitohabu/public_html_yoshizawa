@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>よしざわ農園</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
+    <script src="../main.js"></script>
 </head>
 <body>
 	<?php
@@ -16,6 +16,7 @@
 		$pro_price = $_POST['price'];
 		$pro_gazou_name_old = $_POST['gazou_name_old'];
 		$pro_gazou = $_FILES['gazou'];
+		//画像名をタイムスタンプとランダム関数で自動命名
 		$pro_new_gazou_name = new DateTime();
 		$pro_new_gazou_name = $pro_new_gazou_name->getTimestamp().rand();
 
@@ -48,6 +49,7 @@
 				print '<br />';
 			}
 		} else {
+			//ファイルがアップロードされなかった場合edit_doneでunlink回避が必要
 			$pro_new_gazou_name = $pro_gazou_name_old;
 		}
 
