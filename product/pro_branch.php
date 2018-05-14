@@ -1,5 +1,7 @@
 <?php
 
+	include '../session.php';
+
 	if(isset($_POST['disp']) == true) {
 		if(isset($_POST['procode']) == false) {
 			header('Location:pro_ng.php');

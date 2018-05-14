@@ -9,11 +9,16 @@
     <script src="../main.js"></script>
 </head>
 <body>
-    <?php
-		include '../session.php';
-	?>
 
-    スタッフが選択されていません。<br />
-    <a href="staff_list.php">戻る</a>
+    スタッフログイン<br />
+    <br />
+    <form method="post" action="staff_login_check.php">
+    スタッフコード<br />
+    <input type="text" name="code" ><br />
+    パスワード<br />
+    <input type="password" name="pass"><br />
+    <br />
+    <input type="submit" value="ログイン">
+    </form>
 </body>
 </html>

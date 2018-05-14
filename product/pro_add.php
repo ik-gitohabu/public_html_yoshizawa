@@ -9,6 +9,9 @@
     <script src="../main.js"></script>
 </head>
 <body>
+    <?php
+		include '../session.php';
+	?>
     商品追加<br />
     <br />
     <form method="post" action="pro_add_check.php" enctype="multipart/form-data">

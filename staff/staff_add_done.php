@@ -10,6 +10,8 @@
 </head>
 <body>
     <?php
+        include '../session.php';
+
         //try{       
             //エラー回避のため三項演算子・エルビス演算子を使用
             $staff_name = @$_POST['name'] ?: '';

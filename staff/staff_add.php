@@ -9,6 +9,9 @@
     <script src="../main.js"></script>
 </head>
 <body>
+    <?php
+		include '../session.php';
+	?>
     スタッフ追加<br />
     <br />
     <form method="post" action="staff_add_check.php">

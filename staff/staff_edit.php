@@ -10,6 +10,8 @@
 </head>
 <body>
     <?php
+        include '../session.php';
+
         //try{
             //$staff_code = $_POST['staffcode'];
             $staff_code = $_GET['staffcode'];

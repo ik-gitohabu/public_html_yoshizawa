@@ -1,5 +1,7 @@
 <?php
 
+    include '../session.php';
+
     if (isset($_POST['add'])) {
         print('追加ボタンが押されました');
         header('Location: staff_add.php');

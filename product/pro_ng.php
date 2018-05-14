@@ -9,6 +9,9 @@
     <script src="../main.js"></script>
 </head>
 <body>
+    <?php
+		include '../session.php';
+	?>
     スタッフが選択されていません。<br />
     <a href="pro_list.php">戻る</a>
 </body>

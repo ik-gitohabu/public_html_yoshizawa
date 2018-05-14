@@ -10,6 +10,8 @@
 </head>
 <body>
 	<?php
+		include '../session.php';
+		
 		//try　{
 			$pro_name = $_POST['name'];
 			$pro_price = $_POST['price'];

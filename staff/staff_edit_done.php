@@ -11,6 +11,7 @@
 </head>
 <body>
     <?php
+        include '../session.php';
             
         //try{        
             $staff_code = $_POST['code'];

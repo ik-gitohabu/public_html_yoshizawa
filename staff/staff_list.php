@@ -10,6 +10,8 @@
 </head>
 <body>
     <?php
+        include '../session.php';
+
         /*try{*/
             include '../database.php';
             $sql = 'SELECT * FROM mst_staff WHERE 1';

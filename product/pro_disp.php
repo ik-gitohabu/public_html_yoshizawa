@@ -10,6 +10,8 @@
 </head>
 <body>
 	<?php
+		include '../session.php';
+	
 		//try {
 
 			$pro_code = $_GET['procode'];

@@ -10,6 +10,7 @@
 </head>
 <body>
 	<?php
+		include '../session.php';
 	
 		$pro_code = $_POST['code'];
 		$pro_name = $_POST['name'];
