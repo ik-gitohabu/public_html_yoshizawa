@@ -8,3 +8,6 @@ http://www.php-ref.com/bapi/02_crypt.html
 
 ## msys や GitBash で cd コマンドに Windows のファイルパスを渡すには（CORREDOR ウェブ、プログラミングの勉強メモ。）
 http://neos21.hatenablog.com/entry/2016/10/04/223045
+
+## 正規表現サンプル集
+http://www.megasoft.co.jp/mifes/seiki/index_s3.html
