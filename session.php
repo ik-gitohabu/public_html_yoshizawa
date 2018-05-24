@@ -1,5 +1,6 @@
 <?php
 
+    //var_dump(session_name());
     session_start();
     session_regenerate_id(true);
     if(isset($_SESSION['login']) == false) {
