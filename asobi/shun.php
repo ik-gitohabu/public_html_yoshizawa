@@ -4,8 +4,10 @@
 	include '../menu.php';
 ?>
 
-商品が選択されていません。<br />
-<a href="pro_list.php">戻る</a>
+<form method="post" action=shun_done.php>
+<input type="text" name="tsuki"><br />
+<input type="submit" value="OK">
+</form>
 
 <?php
 	include '../footer.php';

@@ -5,15 +5,12 @@
 
     try {
 
-		$pro_code = $_POST['code'];
-		$pro_name = $_POST['name'];
-		$pro_price = $_POST['price'];
-		$pro_gazou_name_old = $_POST['gazou_name_old'];
-		$pro_gazou_name = $_POST['gazou_name'];
-
-		$pro_code = htmlspecialchars($pro_code);
-		$pro_name = htmlspecialchars($pro_name);
-		$pro_price = htmlspecialchars($pro_price);
+		$post = sanitize($_POST);
+		$pro_code = @$post['code'];
+		$pro_name = @$post['name'];
+		$pro_price = @$post['price'];
+		$pro_gazou_name_old = @$post['gazou_name_old'];
+		$pro_gazou_name = @$post['gazou_name'];
 
 		include '../database.php';
 		$sql = 'UPDATE mst_product SET name = ?, price = ?, gazou = ? WHERE code = ?';

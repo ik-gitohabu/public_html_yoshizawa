@@ -32,7 +32,7 @@ initdb.dディレクトリ作成後、create.sqlをコピーして下さい。
 
 立上げ `docker-compose up -d`
 
-アクセス http://localhost:8080/
+アクセス http://localhost:8080/staff_login/staff_login.php
 
 終了 `docker-compose stop`
 

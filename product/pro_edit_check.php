@@ -3,18 +3,15 @@
 	include '../header.php';
 	include '../menu.php';
 	
-	$pro_code = $_POST['code'];
-	$pro_name = $_POST['name'];
-	$pro_price = $_POST['price'];
-	$pro_gazou_name_old = $_POST['gazou_name_old'];
+	$post = sanitize($_POST);
+	$pro_code = @$post['code'];
+	$pro_name = @$post['name'];
+	$pro_price = @$post['price'];
+	$pro_gazou_name_old = @$post['gazou_name_old'];
 	$pro_gazou = $_FILES['gazou'];
 	//画像名をタイムスタンプとランダム関数で自動命名
 	$pro_new_gazou_name = new DateTime();
 	$pro_new_gazou_name = $pro_new_gazou_name->getTimestamp().rand();
-
-	$pro_code = htmlspecialchars($pro_code);
-	$pro_name = htmlspecialchars($pro_name);
-	$pro_price = htmlspecialchars($pro_price);
 
 	if($pro_name == '') {
 		print '商品名が入力されていません。<br />';
