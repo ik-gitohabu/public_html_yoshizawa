@@ -11,7 +11,7 @@
         
         $dbh = null;
         
-        print('スタッフ一覧<br /><br />');
+        print('<h1>スタッフ一覧</h1>');
         print('<form method="post" action="staff_branch.php">');
         while (true) {
             $rec = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -19,8 +19,8 @@
             if ($rec==false) {
                 break;
             }
-            print('<input type="radio" name="staffcode" value="'.$rec['code'].'">');
-            print($rec['name'].'<br />');
+            print('<label for="'.$rec['code'].'"><input type="radio" name="staffcode" value="'.$rec['code'].'" id="'.$rec['code'].'">');
+            print($rec['name'].'</label><br />');
 
         }
         print('<input type="submit" name="disp" value="参照">');

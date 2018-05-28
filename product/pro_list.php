@@ -11,7 +11,7 @@
 
 		$dbh = null;
 
-		print '商品一覧<br /><br />';
+		print '<h1>商品一覧</h1>';
 
 		print '<form method="post" action="pro_branch.php">';
 		while(true)
@@ -21,10 +21,10 @@
 			{
 				break;
 			}
-			print '<input type="radio" name="procode" value="'.$rec['code']. '">';
+			print '<label for="'.$rec['code'].'"><input type="radio" name="procode" value="'.$rec['code'].'" id="'.$rec['code'].'" >';
 			print $rec['name'].'---';
 			print $rec['price'].'円';
-			print '<br />';
+			print '</label><br />';
 		}
 		print '<input type="submit" name="disp" value="参照">';
 		print '<input type="submit" name="add" value="追加">';

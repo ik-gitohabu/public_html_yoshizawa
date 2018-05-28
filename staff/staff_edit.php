@@ -24,8 +24,7 @@
     }
 ?>
 
-スタッフ修正<br />
-<br />
+<h1>スタッフ修正</h1>
 スタッフコード<br />
 <?=$staff_code?><br /><br />
 <form method="post" action="staff_edit_check.php">

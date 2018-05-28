@@ -4,7 +4,7 @@
 	include '../menu.php';
 ?>
 
-	ショップ管理トップメニュー<br />
+	<h1>ショップ管理トップメニュー</h1>
 	<br />
 	<a href="../staff/staff_list.php">スタッフ管理</a><br />
 	<br />

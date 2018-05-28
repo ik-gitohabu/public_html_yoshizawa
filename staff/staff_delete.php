@@ -23,8 +23,7 @@
     }
 ?>
 
-スタッフ削除<br />
-<br />
+<h1>スタッフ削除</h1>
 スタッフコード<br />
 <?=$staff_code?><br /><br />
 <form method="post" action="staff_delete_done.php">

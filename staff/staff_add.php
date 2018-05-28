@@ -4,8 +4,7 @@
     include '../menu.php';
 ?>
 
-スタッフ追加<br />
-<br />
+<h1>スタッフ追加</h1>
 <form method="post" action="staff_add_check.php">
 スタッフ名を入力してください。<br />
 <input type="text" name="name" style="width:200px"><br />

@@ -4,8 +4,7 @@
     include '../menu.php';
 ?>
 
-商品追加<br />
-<br />
+<h1>商品追加</h1>
 <form method="post" action="pro_add_check.php" enctype="multipart/form-data">
 商品名を入力してください。<br />
 <input type="text" name="name" style="width:200px"><br />
