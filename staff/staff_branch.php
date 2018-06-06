@@ -1,6 +1,7 @@
 <?php
 
     include '../session.php';
+    require_once('../common/common.php');
 
     if (isset($_POST['add'])) {
         //print('追加ボタンが押されました');

@@ -1,6 +1,7 @@
 <?php
 
 	include '../session.php';
+	require_once('../common/common.php');
 
 	if(isset($_POST['disp']) == true) {
 		if(isset($_POST['procode']) == false) {
