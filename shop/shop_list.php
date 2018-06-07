@@ -34,7 +34,7 @@
 
 	print '<br />';
 	print '<a href="shop_cartlook.php">カートを見る</a><br />';
-	//print '<a href="clear_cart.php">カートの中身を空にする</a><br />';
+	print '<a href="clear_cart.php">カートの中身を空にする</a><br />';
 
 	include '../footer.php';
 ?>

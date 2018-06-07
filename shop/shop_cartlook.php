@@ -24,7 +24,7 @@
 			$rec = $stmt->fetch(PDO::FETCH_ASSOC);
 			$pro_name[] = $rec['name'];
 			$pro_price[] = $rec['price'];
-			if ($rec['price'] == '') {
+			if ($rec['gazou'] == '') {
 				$pro_gazou[] = '';
 			} else {
 				$pro_gazou[] = '<img src="../product/gazou/'.$rec['gazou'].'">';
