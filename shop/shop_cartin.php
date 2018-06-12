@@ -13,10 +13,10 @@
 		$kazu[] = 1;
 		$_SESSION['cart'] = $cart;
 		$_SESSION['kazu'] = $kazu;
-		/*foreach($cart as $key=>$val) {
+		foreach($cart as $key=>$val) {
 			print $val;
 			print '<br />';
-		}*/
+		}
 		
 	} catch(Exception $e) {
 		print('ただいま障害により大変ご迷惑をお掛けしております。');
