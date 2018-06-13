@@ -4,19 +4,25 @@
 	include '../menu_guest.php';
 
     try {
+		$flg = true; //商品がすでに入っている場合はfalse
 		$pro_code = $_GET['procode'];
 		if (isset($_SESSION['cart']) == true) {
 			$cart = $_SESSION['cart'];
 			$kazu = $_SESSION['kazu'];
+			if (in_array($pro_code, $cart) == true) {
+				$flg = false;
+			}
 		}
-		$cart[] = $pro_code;
-		$kazu[] = 1;
+		if ($flg) {
+			$cart[] = $pro_code;
+			$kazu[] = 1;
+		}
 		$_SESSION['cart'] = $cart;
 		$_SESSION['kazu'] = $kazu;
-		foreach($cart as $key=>$val) {
+		/*foreach($cart as $key=>$val) {
 			print $val;
 			print '<br />';
-		}
+		}*/
 		
 	} catch(Exception $e) {
 		print('ただいま障害により大変ご迷惑をお掛けしております。');
@@ -24,7 +30,17 @@
 	}
 ?>
 
+<?php
+	if ($flg) {
+?>
 カートに追加しました。
+<?php
+	} else {
+?>
+その商品はすでにカートに入っています。
+<?php
+	}
+?>
 <br />
 <a href="shop_list.php">商品一覧に戻る</a>
 

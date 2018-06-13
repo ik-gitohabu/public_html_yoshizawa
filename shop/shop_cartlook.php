@@ -4,6 +4,9 @@
 	include '../menu_guest.php';
 
     try {
+		$get = sanitize($_GET);
+		$error = @$get['error'];
+
 		$cart = array();
 		$kazu = array();
 		if (isset($_SESSION['cart']) == true) {
@@ -45,9 +48,11 @@
 ?>
 
 <?php
+	if ($error) {
+		print '<p class="error">'.str_replace("/n", "<br />", $error).'</p>';
+	}
 	if ($max == 0){
 ?>
-<form>
 カートに商品が入っていません。
 <br />
 <?php
@@ -56,30 +61,43 @@
 
 <h1>カートの中身</h1>
 <form method="post" action="kazu_change.php">
+<table>
+<tr>
+<th>商品</th>
+<th>画像</th>
+<th>価格</th>
+<th>数量</th>
+<th>小計</th>
+<th>削除</th>
+</tr>
 <?php
 		for($i = 0; $i < $max; $i++) {
 ?>
-<h2><?=$pro_name[$i]?></h2>
-<?=$pro_gazou[$i]?>
-<br />
-<?=$pro_price[$i]?>円
-×
-<input type="text" name="kazu<?=$i?>" value="<?=$kazu[$i]?>">個
-=
-<?=$pro_price[$i] * $kazu[$i]?>円
-<br />
+<tr>
+<th><?=$pro_name[$i]?></th>
+<td><?=$pro_gazou[$i]?></td>
+<td><?=$pro_price[$i]?>円</td>
+<td><input type="text" name="kazu<?=$i?>" value="<?=$kazu[$i]?>">個</td>
+<td><?=$pro_price[$i] * $kazu[$i]?>円</td>
+<td><input type="checkbox" name="sakujo<?=$i?>"></td>
+</tr>
 <?php
 		}
 ?>
+</table>
 <input type="hidden" name="max" value="<?=$max?>">
 <input type="submit" value="数量変更"><br />
+</form>
+
+<br />
+<a href="shop_form.php">ご購入手続きに進む</a>
+<br />
 
 <?php
 	}
 ?>
 
-<input type="button" onclick="history.back()" value="戻る">
-</form>
+<a href="shop_list.php">商品一覧に戻る</a>
 
 <?php
     include '../footer.php';

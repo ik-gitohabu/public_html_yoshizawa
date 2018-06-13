@@ -49,7 +49,7 @@
 <br />
 <br />
 <form>
-<input type="button" onclick="history.back()" value="戻る">
+<a href="shop_list.php">商品一覧に戻る</a>
 </form>
 
 <?php

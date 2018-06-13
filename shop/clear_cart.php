@@ -10,7 +10,9 @@
 	include '../menu_guest.php';
 ?>
 
-	カートを空にしました。<br />
+カートを空にしました。
+<br />
+<a href="shop_list.php">商品一覧に戻る</a>
 
 <?php
 	include '../footer.php';
