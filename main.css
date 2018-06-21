@@ -35,8 +35,9 @@ input[type=submit] {
     border-radius: 5px;
 }
 
-table, th, td {
+table, tr, th, td {
     border: 1px solid black;
+    border-spacing: 0px;
 }
 
 label {

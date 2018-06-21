@@ -1,12 +1,12 @@
 <?php
 
     //array_splice demo
-    $shori[]=5;
-    $shori[]=4;
-    $shori[]=3;
-    $shori[]=2;
-    $shori[]=1;
-    $shori[]=0;
+    $shori['a']=1;
+    $shori['b']=2;
+    $shori['c']=3;
+    $shori['d']=4;
+    $shori['e']=5;
+    $shori['f']=6;
     print('処理前<br />');
     var_dump($shori);
     print('<br /><br />');
