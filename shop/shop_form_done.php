@@ -24,10 +24,10 @@
 
 <?php
 		$honbun = '';
-		$honbun .= $onamae.'様\n\nこのたびはご注文ありがとうございました。\n';
-		$honbun .= '\n';
-		$honbun .= 'ご注文商品\n';
-		$honbun .= '--------------------\n';
+		$honbun .= $onamae."様\n\nこのたびはご注文ありがとうございました。\n";
+		$honbun .= "\n";
+		$honbun .= "ご注文商品\n";
+		$honbun .= "--------------------\n";
 
 		$cart = $_SESSION['cart'];
 		$kazu = $_SESSION['kazu'];
@@ -47,30 +47,29 @@
 			$suryo = $kazu[$key];
 			$shokei = $price * $suryo;
 
-			$honbun .= $name.' ';
-			$honbun .= $price.'円 x';
-			$honbun .= $suryo.'個 = ';
-			$honbun .= $shokei.'円\n';
+			$honbun .= $name." ";
+			$honbun .= $price."円 x";
+			$honbun .= $suryo."個 = ";
+			$honbun .= $shokei."円\n";
 		}
-        $dbh = null;
+		$dbh = null;
+		$honbun .= "送料は無料です。\n";
+		$honbun .= "--------------------\n";
+		$honbun .= "\n";
+		$honbun .= "代金は以下の口座にお振込ください。\n";
+		$honbun .= "よしざわ銀行 やさい支店 普通口座 1234567\n";
+		$honbun .= "入金確認が取れ次第、梱包、発送させていただきます。\n";
+		$honbun .= "\n";
+		$honbun .= "□□□□□□□□□□□□□□□□□□□□\n";
+		$honbun .= " 〜安心野菜のよしざわ農園〜\n";
+		$honbun .= "\n";
+		$honbun .= "○○県六丸郡六丸村 123-4\n";
+		$honbun .= "電話 090-6060-xxxx\n";
+		$honbun .= "メール info@yoshizawanouen.co.jp\n";
+		$honbun .= "□□□□□□□□□□□□□□□□□□□□\n";
 
-		$honbun .= '送料は無料です。\n';
-		$honbun .= '--------------------\n';
-		$honbun .= '\n';
-		$honbun .= '代金は以下の口座にお振込ください。\n';
-		$honbun .= 'よしざわ銀行 やさい支店 普通口座 1234567\n';
-		$honbun .= '入金確認が取れ次第、梱包、発送させていただきます。\n';
-		$honbun .= '\n';
-		$honbun .= '□□□□□□□□□□□□□□□□□□□□\n';
-		$honbun .= ' 〜安心野菜のよしざわ農園〜\n';
-		$honbun .= '\n';
-		$honbun .= '○○県六丸郡六丸村 123-4\n';
-		$honbun .= '電話 090-6060-xxxx\n';
-		$honbun .= 'メール info@yoshizawanouen.co.jp\n';
-		$honbun .= '□□□□□□□□□□□□□□□□□□□□\n';
-
-		//print '<br /><br />';
-		//print nl2br($honbun);
+		print '<br /><br />';
+		print nl2br($honbun);
 
 		$title = 'ご注文ありがとうございます。';
 		$header = 'From:info@yoshizawanouen.co.jp';
