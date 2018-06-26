@@ -3,6 +3,8 @@
 	include '../header.php';
 	include '../menu_guest.php';
 
+	$error = array();
+	
     try {
 		$get = sanitize($_GET);
 		$error = @$get['error'];
