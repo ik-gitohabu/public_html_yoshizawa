@@ -31,3 +31,30 @@
         }
         return $after;
     }
+
+    function pulldown_year(){
+        $pulldown = '<select name="year">';
+        for ($i = 2017;$i <= 2020; $i++){
+            $pulldown .= '<option value="'.$i.'">'.$i.'</option>';
+        }
+        $pulldown .= '</select>';
+        print $pulldown;
+    }
+
+    function pulldown_month(){
+        $pulldown = '<select name="month">';
+        for ($i = 1;$i <= 12; $i++){
+            $pulldown .= '<option value="'.sprintf('%02d', $i).'">'.sprintf('%02d', $i).'</option>';
+        }
+        $pulldown .= '</select>';
+        print $pulldown;
+    }
+
+    function pulldown_day(){
+        $pulldown = '<select name="day">';
+        for ($i = 1;$i <= 31; $i++){
+            $pulldown .= '<option value="'.sprintf('%02d', $i).'">'.sprintf('%02d', $i).'</option>';
+        }
+        $pulldown .= '</select>';
+        print $pulldown;
+    }

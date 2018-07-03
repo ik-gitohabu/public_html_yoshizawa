@@ -18,6 +18,9 @@ http://www.megasoft.co.jp/mifes/seiki/index_s3.html
 ## 正規表現テストサイト
 https://regex101.com/
 
+## フォーマット文字列 sprintf()
+http://php.net/manual/ja/function.sprintf.php
+
 # Dockerについて
 
 docker-compose.yml、Dockerfileをコピーすれば他の環境でも使えます。

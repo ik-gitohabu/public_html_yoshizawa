@@ -31,6 +31,7 @@
 
 		$cart = $_SESSION['cart'];
 		$kazu = $_SESSION['kazu'];
+		$kakaku = array();
 		$max = count($cart);
 
 		include '../database.php';
@@ -44,6 +45,7 @@
 
 			$name = $rec['name'];
 			$price = $rec['price'];
+			$kakaku[$key] = $price;
 			$suryo = $kazu[$key];
 			$shokei = $price * $suryo;
 
@@ -52,7 +54,71 @@
 			$honbun .= $suryo."個 = ";
 			$honbun .= $shokei."円\n";
 		}
+
+		$sql = 'LOCK TABLES dat_sales WRITE, dat_sales_product WRITE';
+		$stmt = $dbh->prepare($sql);
+		$stmt->execute();
+
+		$sql = 'INSERT INTO dat_sales (
+								code_member,
+								name,
+								email,
+								postal1,
+								postal2,
+								address,
+								tel
+							) VALUE (
+								?,?,?,?,?,?,?
+							)';
+		$stmt = $dbh->prepare($sql);
+		$data = array();
+		$data[] = 0; //仮ID
+		$data[] = $onamae;
+		$data[] = $email;
+		$data[] = $postal1;
+		$data[] = $postal2;
+		$data[] = $address;
+		$data[] = $tel;
+		$stmt->execute($data);
+
+		$sql = 'SELECT LAST_INSERT_ID()';
+		$stmt = $dbh->prepare($sql);
+		$stmt->execute();
+		$rec = $stmt->fetch(PDO::FETCH_ASSOC);
+		$lastcode = $rec['LAST_INSERT_ID()'];
+
+		foreach($cart as $key => $val) {
+			$sql = 'INSERT INTO dat_sales_product (
+									code_sales,
+									code_product,
+									price,
+									quantity
+								) VALUES(
+									?,?,?,?
+								)';
+			$stmt = $dbh->prepare($sql);
+			$data = array();
+			$data[] = $lastcode;
+			$data[] = $cart[$key];
+			$data[] = $kakaku[$key];
+			$data[] = $kazu[$key];
+			$stmt->execute($data);
+		}
+
+		//sleep(300);
+
+		$sql = 'UNLOCK TABLES';
+		$stmt = $dbh->prepare($sql);
+		$stmt->execute();
+
+		/*$sql = 'SELECT * FROM dat_sales, dat_sales_product WHERE dat_sales.code = dat_sales_product.code_sales';
+		$stmt = $dbh->prepare($sql);
+		$stmt->execute();
+		$rec = $stmt->fetch(PDO::FETCH_ASSOC);
+		var_dump($rec);*/
+
 		$dbh = null;
+
 		$honbun .= "送料は無料です。\n";
 		$honbun .= "--------------------\n";
 		$honbun .= "\n";
@@ -86,10 +152,16 @@
 		//mb_send_mail($email, $title, $honbun, $header);
 		mb_send_mail('info@yoshizawanouen.co.jp', $title, $honbun, $header);
 
+		$_SESSION = array();
 	} catch(Exception $e) {
 		print('ただいま障害により大変ご迷惑をお掛けしております。');
 		exit();
 	}
+?>
 
+<br />
+<a href="shop_list.php">商品画面へ</a>
+
+<?php
 	include '../footer.php';
 ?>
