@@ -105,17 +105,17 @@
 			$stmt->execute($data);
 		}
 
-		//sleep(300);
+		//sleep(5);
 
 		$sql = 'UNLOCK TABLES';
 		$stmt = $dbh->prepare($sql);
 		$stmt->execute();
 
-		/*$sql = 'SELECT * FROM dat_sales, dat_sales_product WHERE dat_sales.code = dat_sales_product.code_sales';
+		$sql = 'SELECT * FROM dat_sales, dat_sales_product WHERE dat_sales.code = dat_sales_product.code_sales';
 		$stmt = $dbh->prepare($sql);
 		$stmt->execute();
 		$rec = $stmt->fetch(PDO::FETCH_ASSOC);
-		var_dump($rec);*/
+		var_dump($rec);
 
 		$dbh = null;
 
