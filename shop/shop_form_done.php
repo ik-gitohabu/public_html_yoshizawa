@@ -111,11 +111,11 @@
 		$stmt = $dbh->prepare($sql);
 		$stmt->execute();
 
-		$sql = 'SELECT * FROM dat_sales, dat_sales_product WHERE dat_sales.code = dat_sales_product.code_sales';
+		/*$sql = 'SELECT * FROM dat_sales, dat_sales_product WHERE dat_sales.code = dat_sales_product.code_sales';
 		$stmt = $dbh->prepare($sql);
 		$stmt->execute();
 		$rec = $stmt->fetch(PDO::FETCH_ASSOC);
-		var_dump($rec);
+		var_dump($rec);*/
 
 		$dbh = null;
 
@@ -152,7 +152,8 @@
 		//mb_send_mail($email, $title, $honbun, $header);
 		mb_send_mail('info@yoshizawanouen.co.jp', $title, $honbun, $header);
 
-		$_SESSION = array();
+		$_SESSION['cart'] = array();
+		$_SESSION['kazu'] = array();
 	} catch(Exception $e) {
 		print('ただいま障害により大変ご迷惑をお掛けしております。');
 		exit();
