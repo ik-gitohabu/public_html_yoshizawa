@@ -105,7 +105,7 @@
 			$stmt->execute($data);
 		}
 
-		//sleep(300);
+		//sleep(5);
 
 		$sql = 'UNLOCK TABLES';
 		$stmt = $dbh->prepare($sql);
@@ -152,7 +152,8 @@
 		//mb_send_mail($email, $title, $honbun, $header);
 		mb_send_mail('info@yoshizawanouen.co.jp', $title, $honbun, $header);
 
-		$_SESSION = array();
+		$_SESSION['cart'] = array();
+		$_SESSION['kazu'] = array();
 	} catch(Exception $e) {
 		print('ただいま障害により大変ご迷惑をお掛けしております。');
 		exit();

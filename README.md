@@ -21,6 +21,9 @@ https://regex101.com/
 ## フォーマット文字列 sprintf()
 http://php.net/manual/ja/function.sprintf.php
 
+## Excelなテスト仕様書をMarkdown/GitHub/CircleCIに移行した話
+http://tech.toreta.in/entry/excel-to-markdown-github-circleci
+
 # Dockerについて
 
 docker-compose.yml、Dockerfileをコピーすれば他の環境でも使えます。
