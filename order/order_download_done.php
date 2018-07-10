@@ -61,7 +61,7 @@
         $csv .= $rec['code_product'].',';
         $csv .= $rec['mst_product_name'].',';
         $csv .= $rec['price'].',';
-        $csv .= $rec['quantity'].',';
+        $csv .= $rec['quantity'];
         $csv .= "\n";
     }
 
