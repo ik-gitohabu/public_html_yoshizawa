@@ -50,6 +50,7 @@
         if (!$rec) {
             break;
         }
+
         $csv .= $rec['code'].',';
         $csv .= $rec['date'].',';
         $csv .= $rec['code_member'].',';
@@ -65,10 +66,10 @@
         $csv .= "\n";
     }
 
-    print nl2br($csv);
+    //print nl2br($csv);
 
     $file_name_hash = new DateTime();
-	$file_name = './csv/'.$file_name_hash->getTimestamp().rand().'.csv';
+	$file_name = './csv/'.md5($file_name_hash->getTimestamp().rand()).'.csv';
     $file = fopen($file_name, 'w');
     $csv = mb_convert_encoding($csv, 'SJIS', 'UTF-8');
     fputs($file, $csv);
