@@ -28,7 +28,7 @@
 スタッフコード<br />
 <?=$staff_code?><br /><br />
 スタッフ名<br />
-<?=$staff_code?><br />
+<?=$staff_name?><br />
 <form>
 <input type="button" onclick="history.back()" value="戻る">
 </form>
