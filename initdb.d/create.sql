@@ -37,3 +37,18 @@ CREATE TABLE dat_sales_product (
   quantity INT,
   PRIMARY KEY (code)
 );
+
+CREATE TABLE dat_member (
+  code INT NOT NULL AUTO_INCREMENT,
+  date TIMESTAMP,
+  password VARCHAR(32),
+  name VARCHAR(15),
+  email VARCHAR(50),
+  postal1 VARCHAR(3),
+  postal2 VARCHAR(4),
+  address VARCHAR(50),
+  tel VARCHAR(13),
+  danjo INT,
+  born INT,
+  PRIMARY KEY (code)
+);

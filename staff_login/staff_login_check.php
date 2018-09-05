@@ -6,9 +6,6 @@
 		$staff_code = @$post['code'];
 		$staff_pass = @$post['pass'];
 
-		$staff_code = htmlspecialchars($staff_code);
-		$staff_pass = htmlspecialchars($staff_pass);
-
 		//staff_add_checkで暗号化した方法に合わせる
 		$staff_pass = md5($staff_pass);
 
