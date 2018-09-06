@@ -49,3 +49,12 @@ initdb.dディレクトリ作成後、create.sqlをコピーして下さい。
 終了 `docker-compose stop`
 
 初期ユーザでID 1、ユーザ名 admin、パスワード passを登録しています。
+
+
+## laravel memo
+
+`composer create-project laravel/laravel`
+`php artisan key:generate`
+`php artisan make:auth`
+`php artisan migrate` <- 学校のPCだと出来ない
+`php artisan serve`
