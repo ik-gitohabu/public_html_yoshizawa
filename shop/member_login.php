@@ -2,7 +2,7 @@
 	include '../header.php';
 ?>
     <div class="login">
-        <h1>スタッフログイン</h1>
+        <h1>会員ログイン</h1>
         <br />
         <form method="post" action="member_login_check.php">
         登録メールアドレス<br />
