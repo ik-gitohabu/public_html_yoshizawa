@@ -1,0 +1,62 @@
+●PHP設定変更
+
+D:¥php¥php.ini 編集。
+行頭の「;」（コメントアウト）をはずす。
+---
+extension=php_mysqli.dll
+extension=php_openssl.dll
+extension=php_pdo_mysql.dll
+---
+
+
+
+● Laravel インストール
+
+¥¥172.18.2.238¥php¥X999 に適当なネットワークドライブを割り当て。以下 Z ドライブとする。
+Z:¥public_html フォルダを開き、N:¥common¥Webプログラミング フォルダから composer.phar をコピー。
+コマンドプロンプトで以下のコマンドを実行。
+---
+z:
+z:¥public_html
+php composer.phar create-project laravel/laravel --prefer-dist laravel
+---
+5分ぐらい待機。
+
+これで、Laravel プロジェクトが完成。
+Laravel にアクセスできるようになる
+http://172.18.2.238/~X999/laravel/public
+
+が、エラーが出るはずなので、以下のコマンドを実行。
+---
+cd laravel
+php artisan key:generate
+---
+認証鍵を設定する必要があるらしい。上記 artisan コマンドで設定できる。
+
+これで、Laravel のデフォルトページが表示されるようになる。
+http://172.18.2.238/~X999/laravel/public
+
+
+
+●補足
+
+・DB migrate
+↓で。
+---
+php artisan migrate
+---
+
+うまくいかなければ↓で。
+---
+php artisan config:cache
+php artisan migrate
+php artisan config:clear
+---
+
+「クライアントで、サーバの Laravel の artisan を実行する」という離れ業（？）を、本授業ではやってもらう。
+その関係で、 migrate に加えて以下の作業が必要になる、かもしれない。
+
+・Laravel の設定をクライアント環境に合わせる（php artisan config:cache）
+・Laravel の設定を元に戻す（php artisan config:clear）
+
+普通は、サーバにログインしてサーバで migrate するので、上のようなことを気にする必要はない。
