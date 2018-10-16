@@ -13,7 +13,7 @@
 <?php
 
     try {
-        $staff_code = $_POST['staffcode'];
+        $staff_code = @$_POST['staffcode'];
 
         include '../database.php';
         $sql = 'SELECT * FROM mst_staff WHERE code=?';
