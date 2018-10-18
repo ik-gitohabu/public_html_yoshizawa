@@ -17,7 +17,7 @@
 パスワードを入力してください。<br />
 <input type="password" name="pass" style="width:100px"><br />
 パスワードをもう１度入力してください。<br />
-<input type="password" name="   " style="width:100px"><br />
+<input type="password" name="pass2" style="width:100px"><br />
 <br />
 <input type="button" onclick="history.back()" value="戻る">
 <input type="submit" value="OK">

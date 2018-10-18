@@ -34,7 +34,7 @@
         print('パスワードが入力されていません。<br />');
     }
 
-    if ($staff_pass!=$staff_pass2) {
+    if ($staff_pass != $staff_pass2) {
         print('パスワードが一致しません。<br />');
     }
 
@@ -42,7 +42,7 @@
         print('<form><input type="button" onclick="history.back()" value="戻る"></form>');
     } else {
         //var_dump($staff_pass);
-        $staff_pass=md5($staff_pass);
+        $staff_pass = md5($staff_pass);
         //var_dump($staff_pass);
         print('<form method="post" action="staff_add_done.php">');
         print('<input type="hidden" name="name" value="'.$staff_name.'" >');
