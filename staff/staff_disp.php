@@ -13,7 +13,6 @@
 <?php
 
     try {
-        //$staff_code = @$_POST['staffcode'];
         $staff_code = @$_GET['staffcode'];
 
         include '../database.php';
@@ -26,27 +25,20 @@
         $staff_name = $rec['name'];
 
         $dbh = null;
-        
+
     } catch(Exception $e) {
         print('ただいま障害により大変ご迷惑をお掛けしております。');
         exit();
     }
 ?>
 
-<h1>スタッフ修正</h1>
+<h1>スタッフ情報参照</h1>
 スタッフコード<br />
 <?=$staff_code?><br /><br />
-<form method="post" action="staff_edit_check.php">
-<input type="hidden" name="code" value="<?=$staff_code?>">
 スタッフ名<br />
-<input type="text" name="name" style="width:200px" value="<?=$staff_name?>"><br />
-パスワードを入力してください。<br />
-<input type="password" name="pass" style="width:100px"><br />
-パスワードをもう１度入力してください。<br />
-<input type="password" name="pass2" style="width:100px"><br />
-<br />
+<?=$staff_name?><br />
+<form>
 <input type="button" onclick="history.back()" value="戻る">
-<input type="submit" value="OK">
 </form>
 
 </body>

@@ -21,7 +21,8 @@
         $dbh = null;
         
         print('<h1>スタッフ一覧</h1>');
-        print('<form method="post" action="staff_edit.php">');
+        //print('<form method="post" action="staff_edit.php">');
+        print('<form method="post" action="staff_branch.php">');
         while (true) {
             $rec = $stmt->fetch(PDO::FETCH_ASSOC);
             //var_dump($rec);
@@ -32,7 +33,10 @@
             print($rec['name'].'</label><br />');
 
         }
-        print('<input type="submit" name="add" value="修正">');
+        print('<input type="submit" name="disp" value="参照">');
+        print('<input type="submit" name="add" value="追加">');
+        print('<input type="submit" name="edit" value="修正">');
+        print('<input type="submit" name="delete" value="削除">');
         print('</form>');
 
     } catch(Exception $e) {
