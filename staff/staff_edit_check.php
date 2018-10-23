@@ -25,7 +25,7 @@
     if($staff_name == '') {
         print('スタッフ名が入力されていません。<br />');
     } else {
-        print('スタッフ名'.$staff_name.'<br />');
+        print('スタッフ名：'.$staff_name.'<br />');
     }
 
     if($staff_pass == '') {
