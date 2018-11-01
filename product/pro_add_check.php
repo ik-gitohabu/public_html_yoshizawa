@@ -25,7 +25,7 @@
     }
 
     if(preg_match('/^[0-9]+$/', $pro_price) == 0) {
-        print('価格が入力されていません。<br />');
+        print('価格をきちんと入力してください。<br />');
     } else {
         print('価格：'.$pro_price.'<br />');
     }
