@@ -15,6 +15,8 @@
     try {
         $staff_code = @$_GET['staffcode'];
 
+        $staff_code = htmlspecialchars($staff_code, ENT_QUOTES, 'UTF-8');
+
         include '../database.php';
         $sql = 'SELECT * FROM mst_staff WHERE code=?';
         $stmt = $dbh->prepare($sql);

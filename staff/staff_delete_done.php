@@ -15,6 +15,8 @@
     try {
         $staff_code = @$_POST['code'];
 
+        $staff_code = htmlspecialchars($staff_code, ENT_QUOTES, 'UTF-8');
+
         include '../database.php';
         $sql = 'DELETE FROM mst_staff WHERE code=?';
         $stmt = $dbh->prepare($sql);
