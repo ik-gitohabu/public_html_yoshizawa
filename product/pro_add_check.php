@@ -20,8 +20,12 @@
     $pro_price = htmlspecialchars($pro_price, ENT_QUOTES, 'UTF-8');
     
 	//画像名をタイムスタンプとランダム関数で自動命名
-	$pro_new_gazou_name = new DateTime();
-	$pro_new_gazou_name = $pro_new_gazou_name->getTimestamp().rand();
+    $pro_new_gazou_name = new DateTime();
+    //var_dump($pro_new_gazou_name);
+    //var_dump($pro_new_gazou_name->getTimestamp());
+    //var_dump(rand());
+    //var_dump(getrandmax());
+    $pro_new_gazou_name = $pro_new_gazou_name->getTimestamp().rand();
 
     if($pro_name == '') {
         print('商品名が入力されていません。<br />');

@@ -18,6 +18,7 @@
 	$pro_gazou_name_old = @$_POST['gazou_name_old'];
 	$pro_gazou = $_FILES['gazou'];
 
+	$pro_code = htmlspecialchars($pro_code, ENT_QUOTES, 'UTF-8');
 	$pro_name = htmlspecialchars($pro_name, ENT_QUOTES, 'UTF-8');
 	$pro_price = htmlspecialchars($pro_price, ENT_QUOTES, 'UTF-8');
 	$pro_gazou_name_old = htmlspecialchars($pro_gazou_name_old, ENT_QUOTES, 'UTF-8');

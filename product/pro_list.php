@@ -14,7 +14,7 @@
 
     try {
 		include '../database.php';
-		$sql = 'SELECT code, name, price FROM mst_product WHERE 1';
+		$sql = 'SELECT * FROM mst_product WHERE 1';
 		$stmt = $dbh->prepare($sql);
 		$stmt->execute();
 

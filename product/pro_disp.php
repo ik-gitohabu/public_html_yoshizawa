@@ -18,7 +18,7 @@
 		$pro_code = htmlspecialchars($pro_code, ENT_QUOTES, 'UTF-8');
 
 		include '../database.php';
-		$sql = 'SELECT name, price, gazou FROM mst_product WHERE code = ?';
+		$sql = 'SELECT * FROM mst_product WHERE code = ?';
 		$stmt = $dbh->prepare($sql);
 		$data[] = $pro_code;
 		$stmt->execute($data);
