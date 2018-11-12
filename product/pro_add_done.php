@@ -1,3 +1,16 @@
+<?php
+    session_start();
+    session_regenerate_id(true);
+    if(isset($_SESSION['login']) == false) {
+        print 'ログインされていません。<br />';
+        print '<a href="../staff_login/staff_login.html">ログイン画面へ</a>';
+        exit();
+    } else {
+        print($_SESSION['staff_name']."さんログイン中<br /><br />");
+    }
+    
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,13 +26,20 @@
 <?php
 
     try {
-        $pro_name = @$_POST['name'];
+        /*$pro_name = @$_POST['name'];
         $pro_price = @$_POST['price'];
         $pro_gazou_name = @$_POST['gazou_name'];
     
         $pro_name = htmlspecialchars($pro_name, ENT_QUOTES, 'UTF-8');
         $pro_price = htmlspecialchars($pro_price, ENT_QUOTES, 'UTF-8');
-        $pro_gazou_name = htmlspecialchars($pro_gazou_name, ENT_QUOTES, 'UTF-8');
+        $pro_gazou_name = htmlspecialchars($pro_gazou_name, ENT_QUOTES, 'UTF-8');*/
+
+        require_once('../common/common.php');
+        $post = sanitize($_POST);
+
+        $pro_name = @$post['name'];
+        $pro_price = @$post['price'];
+        $pro_gazou_name = @$post['gazou_name'];
 
         //空データが入ってしまうため追加推薦
         if (empty($pro_name) or empty($pro_price)) {

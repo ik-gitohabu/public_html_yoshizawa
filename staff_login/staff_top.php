@@ -3,14 +3,13 @@
     session_regenerate_id(true);
     if(isset($_SESSION['login']) == false) {
         print 'ログインされていません。<br />';
-        print '<a href="../staff_login/staff_login.php">ログイン画面へ</a>';
+        print '<a href="staff_login.html">ログイン画面へ</a>';
         exit();
     } else {
         print($_SESSION['staff_name']."さんログイン中<br /><br />");
     }
     
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,9 +21,22 @@
     <script src="main.js"></script>
 </head>
 <body>
-    
-スタッフが選択されていません。<br />
-<a href="staff_list.php">戻る</a>
+	
+	<h1>ショップ管理トップメニュー</h1>
+	<br />
+	<a href="../staff/staff_list.php">スタッフ管理</a><br />
+	<br />
+	<a href="../product/pro_list.php">商品管理</a><br />
+	<br />
+	<a href="../asobi/shun.html">月ごとの旬の野菜</a><br />
+	<br />
+	<a href="../asobi/hoshi.html">有名な天体</a><br />
+	<br />
+	<a href="../asobi/gakunen.html">学年ごとに校舎案内</a><br />
+	<br />
+	<a href="../asobi/gengo.html">西暦から元号判定</a><br />
+	<br />
+	<a href="staff_logout.php">ログアウト</a><br />
 
 </body>
 </html>

@@ -1,3 +1,16 @@
+<?php
+    session_start();
+    session_regenerate_id(true);
+    if(isset($_SESSION['login']) == false) {
+        print 'ログインされていません。<br />';
+        print '<a href="../staff_login/staff_login.html">ログイン画面へ</a>';
+        exit();
+    } else {
+        print($_SESSION['staff_name']."さんログイン中<br /><br />");
+    }
+    
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,9 +26,14 @@
 <?php
 
     try {
-        $staff_code = @$_POST['code'];
+        /*$staff_code = @$_POST['code'];
 
-        $staff_code = htmlspecialchars($staff_code, ENT_QUOTES, 'UTF-8');
+        $staff_code = htmlspecialchars($staff_code, ENT_QUOTES, 'UTF-8');*/
+
+        require_once('../common/common.php');
+        $post = sanitize($_POST);
+
+        $staff_code = @$post['code'];
 
         include '../database.php';
         $sql = 'DELETE FROM mst_staff WHERE code=?';

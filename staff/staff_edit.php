@@ -1,3 +1,16 @@
+<?php
+    session_start();
+    session_regenerate_id(true);
+    if(isset($_SESSION['login']) == false) {
+        print 'ログインされていません。<br />';
+        print '<a href="../staff_login/staff_login.html">ログイン画面へ</a>';
+        exit();
+    } else {
+        print($_SESSION['staff_name']."さんログイン中<br /><br />");
+    }
+    
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,10 +27,15 @@
 
     try {
         //$staff_code = @$_POST['staffcode'];
-        $staff_code = @$_GET['staffcode'];
+        /*$staff_code = @$_GET['staffcode'];
 
-        $staff_code = htmlspecialchars($staff_code, ENT_QUOTES, 'UTF-8');
+        $staff_code = htmlspecialchars($staff_code, ENT_QUOTES, 'UTF-8');*/
 
+        require_once('../common/common.php');
+        $get = sanitize($_GET);
+
+        $staff_code = @$get['staffcode'];
+        
         include '../database.php';
         $sql = 'SELECT * FROM mst_staff WHERE code=?';
         $stmt = $dbh->prepare($sql);

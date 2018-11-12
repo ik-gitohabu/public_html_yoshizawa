@@ -1,3 +1,16 @@
+<?php
+    session_start();
+    session_regenerate_id(true);
+    if(isset($_SESSION['login']) == false) {
+        print 'ログインされていません。<br />';
+        print '<a href="../staff_login/staff_login.html">ログイン画面へ</a>';
+        exit();
+    } else {
+        print($_SESSION['staff_name']."さんログイン中<br /><br />");
+    }
+    
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,10 +26,15 @@
 <?php
 
     try {
-		$pro_code = $_GET['procode'];
+		/*$pro_code = $_GET['procode'];
 
-		$pro_code = htmlspecialchars($pro_code, ENT_QUOTES, 'UTF-8');
+		$pro_code = htmlspecialchars($pro_code, ENT_QUOTES, 'UTF-8');*/
 
+		require_once('../common/common.php');
+		$get = sanitize($_GET);
+
+		$pro_code = $get['procode'];
+		
 		include '../database.php';
 		$sql = 'SELECT * FROM mst_product WHERE code = ?';
 		$stmt = $dbh->prepare($sql);
