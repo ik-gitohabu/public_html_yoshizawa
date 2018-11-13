@@ -1,6 +1,9 @@
 <?php
     session_start();
+    //var_dump($_SESSION);
     session_regenerate_id(true);
+    //var_dump(session_name());
+    //var_dump($_COOKIE[session_name()]);
     if(isset($_SESSION['login']) == false) {
         print 'ログインされていません。<br />';
         print '<a href="staff_login.html">ログイン画面へ</a>';
@@ -8,7 +11,7 @@
     } else {
         print($_SESSION['staff_name']."さんログイン中<br /><br />");
     }
-    
+
 ?>
 <!DOCTYPE html>
 <html>
