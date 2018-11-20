@@ -19,6 +19,8 @@
 	$hoshi['M45'] = 'すばる';
 	$hoshi['M57'] = 'ドーナツ星雲';
 
+	//var_dump($hoshi);
+
 	foreach ($hoshi as $key=>$val) {
 		print $key.'は'.$val.'<br />';
 	}
