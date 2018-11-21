@@ -2,7 +2,7 @@
 
     function gengo($seireki) {
 
-        $gengo = '太古';
+        $gengo = '不明';
 
         if (1868 <= $seireki && $seireki <= 1911) {
             $gengo = '明治';

@@ -18,6 +18,9 @@ http://www.megasoft.co.jp/mifes/seiki/index_s3.html
 ## 正規表現テストサイト
 https://regex101.com/
 
+## include()とrequire()の違い
+https://wp-p.info/tpl_rep.php?cat=php-biginner&fl=r14
+
 ## フォーマット文字列 sprintf()
 http://php.net/manual/ja/function.sprintf.php
 

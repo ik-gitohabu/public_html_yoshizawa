@@ -27,6 +27,8 @@
 	$yasai[] = '大根'; //11
 	$yasai[] = 'ほうれんそう'; //12
 
+	//var_dump($yasai);
+
 	print $tsuki.'月は'.$yasai[$tsuki].'が旬です。';
 
 ?>
