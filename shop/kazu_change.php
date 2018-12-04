@@ -1,5 +1,7 @@
 <?php
-
+    session_start();
+	session_regenerate_id(true);
+	
 	$error = "";
 	require_once('../common/common.php');
 	$post = sanitize($_POST);

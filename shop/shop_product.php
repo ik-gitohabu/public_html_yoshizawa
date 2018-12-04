@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    session_regenerate_id(true);
+    if(isset($_SESSION['member_login']) == false) {
+        print 'ようこそゲスト様 <a href="member_login.html">会員ログイン</a><br /><br />';
+    } else {
+		print('ようこそ'.$_SESSION['member_name'].'様 <a href="member_logout.php">ログアウト</a><br /><br />');
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
