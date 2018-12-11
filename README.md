@@ -53,6 +53,6 @@ initdb.dディレクトリ作成後、create.sqlをコピーして下さい。
 
 初期ユーザでID 1、ユーザ名 admin、パスワード passを登録しています。
 
-##　【追加講義】Laravelチュートリアル
+## 【追加講義】Laravelチュートリアル
 
 https://qiita.com/bboobbaa/private/2d5d178c33778678b227

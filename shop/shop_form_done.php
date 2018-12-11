@@ -22,6 +22,7 @@
 <?php
 
 	try {
+		require_once('../common/common.php');
 		$post = sanitize($_POST);
 
 		$onamae = $post['onamae'];
@@ -30,10 +31,10 @@
 		$postal2 = $post['postal2'];
 		$address = $post['address'];
 		$tel = $post['tel'];
-		$chumon = $post['chumon'];
+		/*$chumon = $post['chumon'];
 		$pass = $post['pass'];
 		$danjo = $post['danjo'];
-		$birth = $post['birth'];
+		$birth = $post['birth'];*/
 ?>
 
 <?=$onamae?>様<br />
@@ -77,12 +78,12 @@
 			$honbun .= $shokei."円\n";
 		}
 
-		$sql = 'LOCK TABLES dat_sales WRITE, dat_sales_product WRITE, dat_member WRITE';
+		/*$sql = 'LOCK TABLES dat_sales WRITE, dat_sales_product WRITE, dat_member WRITE';
 		$stmt = $dbh->prepare($sql);
-		$stmt->execute();
+		$stmt->execute();*/
 
-		$lastmembercode = 0;
-		if ($chumon == 'chumontoroku') {
+		//$lastmembercode = 0;
+		/*if ($chumon == 'chumontoroku') {
 			$sql = 'INSERT INTO dat_member (
 								password,
 								name,
@@ -120,9 +121,9 @@
 			$rec = $stmt->fetch(PDO::FETCH_ASSOC);
 			
 			$lastmembercode = $rec['LAST_INSERT_ID()'];
-		}
+		}*/
 
-		$sql = 'INSERT INTO dat_sales (
+		/*$sql = 'INSERT INTO dat_sales (
 								code_member,
 								name,
 								email,
@@ -143,9 +144,9 @@
 		$data[] = $postal2;
 		$data[] = $address;
 		$data[] = $tel;
-		$stmt->execute($data);
+		$stmt->execute($data);*/
 
-		$sql = 'SELECT LAST_INSERT_ID()';
+		/*$sql = 'SELECT LAST_INSERT_ID()';
 		$stmt = $dbh->prepare($sql);
 		$stmt->execute();
 		$rec = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -167,13 +168,13 @@
 			$data[] = $kakaku[$key];
 			$data[] = $kazu[$key];
 			$stmt->execute($data);
-		}
+		}*/
 
 		//sleep(5);
 
-		$sql = 'UNLOCK TABLES';
+		/*$sql = 'UNLOCK TABLES';
 		$stmt = $dbh->prepare($sql);
-		$stmt->execute();
+		$stmt->execute();*/
 
 		/*$sql = 'SELECT * FROM dat_sales, dat_sales_product WHERE dat_sales.code = dat_sales_product.code_sales';
 		$stmt = $dbh->prepare($sql);
@@ -183,12 +184,12 @@
 
 		$dbh = null;
 
-		if ($chumon == 'chumontoroku') {
+		/*if ($chumon == 'chumontoroku') {
 			print '注文登録が完了いたしました。<br />';
 			print '次回からメールアドレスとパスワードでログインしてください。<br />';
 			print 'ご注文が簡単にできるようになります。<br />';
 			print '<br />';
-		}
+		}*/
 
 		$honbun .= "送料は無料です。\n";
 		$honbun .= "--------------------\n";
@@ -197,12 +198,12 @@
 		$honbun .= "よしざわ銀行 やさい支店 普通口座 1234567\n";
 		$honbun .= "入金確認が取れ次第、梱包、発送させていただきます。\n";
 		$honbun .= "\n";
-		if ($chumon == 'chumontoroku') {
+		/*if ($chumon == 'chumontoroku') {
 			$honbun .= "会員登録が完了いたしました。\n";
 			$honbun .= "次回からメールアドレスとパスワードでログインしてください。\n";
 			$honbun .= "ご注文が簡単にできるようになります。\n";
 			$honbun .= "\n";
-		}
+		}*/
 		$honbun .= "□□□□□□□□□□□□□□□□□□□□\n";
 		$honbun .= " 〜安心野菜のよしざわ農園〜\n";
 		$honbun .= "\n";
