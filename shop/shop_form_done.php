@@ -78,9 +78,9 @@
 			$honbun .= $shokei."円\n";
 		}
 
-		/*$sql = 'LOCK TABLES dat_sales WRITE, dat_sales_product WRITE, dat_member WRITE';
+		$sql = 'LOCK TABLES dat_sales WRITE, dat_sales_product WRITE, dat_member WRITE';
 		$stmt = $dbh->prepare($sql);
-		$stmt->execute();*/
+		$stmt->execute();
 
 		//$lastmembercode = 0;
 		/*if ($chumon == 'chumontoroku') {
@@ -123,7 +123,7 @@
 			$lastmembercode = $rec['LAST_INSERT_ID()'];
 		}*/
 
-		/*$sql = 'INSERT INTO dat_sales (
+		$sql = 'INSERT INTO dat_sales (
 								code_member,
 								name,
 								email,
@@ -136,17 +136,17 @@
 							)';
 		$stmt = $dbh->prepare($sql);
 		$data = array();
-		//$data[] = 0; //仮ID
-		$data[] = $lastmembercode;
+		$data[] = 0; //仮ID
+		//$data[] = $lastmembercode;
 		$data[] = $onamae;
 		$data[] = $email;
 		$data[] = $postal1;
 		$data[] = $postal2;
 		$data[] = $address;
 		$data[] = $tel;
-		$stmt->execute($data);*/
+		$stmt->execute($data);
 
-		/*$sql = 'SELECT LAST_INSERT_ID()';
+		$sql = 'SELECT LAST_INSERT_ID()';
 		$stmt = $dbh->prepare($sql);
 		$stmt->execute();
 		$rec = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -168,13 +168,13 @@
 			$data[] = $kakaku[$key];
 			$data[] = $kazu[$key];
 			$stmt->execute($data);
-		}*/
+		}
 
 		//sleep(5);
 
-		/*$sql = 'UNLOCK TABLES';
+		$sql = 'UNLOCK TABLES';
 		$stmt = $dbh->prepare($sql);
-		$stmt->execute();*/
+		$stmt->execute();
 
 		/*$sql = 'SELECT * FROM dat_sales, dat_sales_product WHERE dat_sales.code = dat_sales_product.code_sales';
 		$stmt = $dbh->prepare($sql);
