@@ -21,6 +21,7 @@
 
 ダウンロードしたい注文日を選んでください。<br />
 <form method="post" action="order_download_done.php">
+<?php require_once('../common/common.php'); ?>
 <?php pulldown_year(); ?>
 年
 <?php pulldown_month(); ?>

@@ -78,7 +78,9 @@
 			$honbun .= $shokei."円\n";
 		}
 
-		$sql = 'LOCK TABLES dat_sales WRITE, dat_sales_product WRITE, dat_member WRITE';
+		
+		$sql = 'LOCK TABLES dat_sales WRITE, dat_sales_product WRITE';	
+		//$sql = 'LOCK TABLES dat_sales WRITE, dat_sales_product WRITE, dat_member WRITE';
 		$stmt = $dbh->prepare($sql);
 		$stmt->execute();
 
@@ -170,7 +172,7 @@
 			$stmt->execute($data);
 		}
 
-		//sleep(5);
+		//sleep(10);
 
 		$sql = 'UNLOCK TABLES';
 		$stmt = $dbh->prepare($sql);
