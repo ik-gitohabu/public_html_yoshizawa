@@ -31,10 +31,10 @@
 		$postal2 = $post['postal2'];
 		$address = $post['address'];
 		$tel = $post['tel'];
-		/*$chumon = $post['chumon'];
+		$chumon = $post['chumon'];
 		$pass = $post['pass'];
 		$danjo = $post['danjo'];
-		$birth = $post['birth'];*/
+		$birth = $post['birth'];
 ?>
 
 <?=$onamae?>様<br />
@@ -79,13 +79,13 @@
 		}
 
 		
-		$sql = 'LOCK TABLES dat_sales WRITE, dat_sales_product WRITE';	
-		//$sql = 'LOCK TABLES dat_sales WRITE, dat_sales_product WRITE, dat_member WRITE';
+		//$sql = 'LOCK TABLES dat_sales WRITE, dat_sales_product WRITE';	
+		$sql = 'LOCK TABLES dat_sales WRITE, dat_sales_product WRITE, dat_member WRITE';
 		$stmt = $dbh->prepare($sql);
 		$stmt->execute();
 
-		//$lastmembercode = 0;
-		/*if ($chumon == 'chumontoroku') {
+		$lastmembercode = 0;
+		if ($chumon == 'chumontoroku') {
 			$sql = 'INSERT INTO dat_member (
 								password,
 								name,
@@ -123,7 +123,7 @@
 			$rec = $stmt->fetch(PDO::FETCH_ASSOC);
 			
 			$lastmembercode = $rec['LAST_INSERT_ID()'];
-		}*/
+		}
 
 		$sql = 'INSERT INTO dat_sales (
 								code_member,
@@ -138,8 +138,8 @@
 							)';
 		$stmt = $dbh->prepare($sql);
 		$data = array();
-		$data[] = 0; //仮ID
-		//$data[] = $lastmembercode;
+		//$data[] = 0; //仮ID
+		$data[] = $lastmembercode;
 		$data[] = $onamae;
 		$data[] = $email;
 		$data[] = $postal1;
@@ -186,12 +186,12 @@
 
 		$dbh = null;
 
-		/*if ($chumon == 'chumontoroku') {
+		if ($chumon == 'chumontoroku') {
 			print '注文登録が完了いたしました。<br />';
 			print '次回からメールアドレスとパスワードでログインしてください。<br />';
 			print 'ご注文が簡単にできるようになります。<br />';
 			print '<br />';
-		}*/
+		}
 
 		$honbun .= "送料は無料です。\n";
 		$honbun .= "--------------------\n";
@@ -200,12 +200,12 @@
 		$honbun .= "よしざわ銀行 やさい支店 普通口座 1234567\n";
 		$honbun .= "入金確認が取れ次第、梱包、発送させていただきます。\n";
 		$honbun .= "\n";
-		/*if ($chumon == 'chumontoroku') {
+		if ($chumon == 'chumontoroku') {
 			$honbun .= "会員登録が完了いたしました。\n";
 			$honbun .= "次回からメールアドレスとパスワードでログインしてください。\n";
 			$honbun .= "ご注文が簡単にできるようになります。\n";
 			$honbun .= "\n";
-		}*/
+		}
 		$honbun .= "□□□□□□□□□□□□□□□□□□□□\n";
 		$honbun .= " 〜安心野菜のよしざわ農園〜\n";
 		$honbun .= "\n";

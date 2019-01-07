@@ -31,11 +31,11 @@
 	$postal2 = $post['postal2'];
 	$address = $post['address'];
 	$tel = $post['tel'];
-	/*$chumon = $post['chumon'];
+	$chumon = $post['chumon'];
 	$pass = $post['pass'];
 	$pass2 = $post['pass2'];
 	$danjo = $post['danjo'];
-	$birth = $post['birth'];*/
+	$birth = $post['birth'];
 
 	if ($onamae == '') {
 		print 'お名前が入力されていません。<br /><br />';
@@ -75,7 +75,7 @@
 		print '電話番号 '.$tel.'<br /><br />';
 	}
 
-	/*if ($chumon == 'chumontoroku') {
+	if ($chumon == 'chumontoroku') {
 		if ($pass == '') {
 			print 'パスワードが入力されていません。<br /><br />';
 			$okflg = false;
@@ -98,7 +98,7 @@
 		print $birth;
 		print '年代';
 		print '生まれ年<br />';
-	}*/
+	}
 
 	if ($okflg) {
 ?>
@@ -110,10 +110,10 @@
 <input type="hidden" name="postal2" value="<?=$postal2?>">
 <input type="hidden" name="address" value="<?=$address?>">
 <input type="hidden" name="tel" value="<?=$tel?>">
-<!--<input type="hidden" name="chumon" value="<?=$chumon?>">
+<input type="hidden" name="chumon" value="<?=$chumon?>">
 <input type="hidden" name="pass" value="<?=$pass?>">
 <input type="hidden" name="danjo" value="<?=$danjo?>">
-<input type="hidden" name="birth" value="<?=$birth?>">-->
+<input type="hidden" name="birth" value="<?=$birth?>">
 <input type="button" onclick="history.back()" value="戻る">
 <input type="submit" value="OK"><br />
 </form>

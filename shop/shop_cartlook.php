@@ -111,7 +111,7 @@
 </form>
 
 <br />
-<a href="shop_form.php">ご購入手続きに進む</a>
+<a href="shop_form.html">ご購入手続きに進む</a>
 <br />
 
 <?php
