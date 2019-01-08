@@ -1,11 +1,14 @@
 <?php
     session_start();
     session_regenerate_id(true);
-    if(isset($_SESSION['member_login']) == false) {
-        print 'ようこそゲスト様 <a href="member_login.html">会員ログイン</a><br /><br />';
+    if(isset($_SESSION['login']) == false) {
+        print 'ログインされていません。<br />';
+        print '<a href="../staff_login/staff_login.html">ログイン画面へ</a>';
+        exit();
     } else {
-		print('ようこそ'.$_SESSION['member_name'].'様 <a href="member_logout.php">ログアウト</a><br /><br />');
+        print($_SESSION['staff_name']."さんログイン中<br /><br />");
     }
+    
 ?>
 <!DOCTYPE html>
 <html>

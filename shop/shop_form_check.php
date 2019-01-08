@@ -81,7 +81,7 @@
 			$okflg = false;
 		}
 
-		if ($pass2 == '') {
+		if ($pass != $pass2) {
 			print 'パスワードが一致しません。<br /><br />';
 			$okflg = false;
 		}
@@ -97,7 +97,7 @@
 		print '生まれ年<br />';
 		print $birth;
 		print '年代';
-		print '生まれ年<br />';
+		print '<br /><br />';
 	}
 
 	if ($okflg) {
